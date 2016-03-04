@@ -1,0 +1,22 @@
+# for state selfservice.vhost.standard (extends normal apache vhost support
+# with sub-directories)
+apache:
+  sites:
+    127.0.0.1:
+      locations:
+        /WEBPATH:
+          id: ID
+          DocumentRoot: DIRECTORY
+          available: true
+
+# for state selfservice.sites
+selfservice: [todo]
+  sites:
+    DIRECTORY:
+      id: ID
+      type: wordpress
+      # wordpress-specific...
+      url: http://SERVER:PORT/WEBPATH
+      admin_password_hash: PASSWORDHASH
+      title: TITLE
+      description: DESCRIPTION
